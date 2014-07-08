@@ -1,0 +1,85 @@
+/**
+ *	main.css
+ *	
+ */
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+div, h1, h2, h3, h4, h5, h6, ul li, p, a {
+	margin: 0;
+	padding: 0;
+}
+
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#map-canvas {
+	background-color: gray;
+	height: 100%;
+	width: 100%;
+}
+
+#toggle {
+	background-color: blue;
+	height: 44px;
+	opacity: 0.9;
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+}
+
+#toggle h1 {
+	color: #FFF;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-top: 15px;
+}
+
+#nav {
+	background-color: blue;
+	position: absolute;
+	display: block;
+	top: 44px;
+	width: 100%;
+	z-index: 101;
+	opacity: 0.75;
+}
+
+.makeVisible {
+	visibility: visible;
+}
+
+.makeInvisible {
+	visibility: hidden;
+}
+
+#nav nav ul {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+ul li {
+	background-color: blue;
+	color: #FFF;
+	height: 44px;
+	margin-top: 1px;
+	padding-left: 10px;
+	padding-top: 10px;
+	list-style-type: none;
+	vertical-align: middle;
+	border-top: 1px solid #FFF;
+}

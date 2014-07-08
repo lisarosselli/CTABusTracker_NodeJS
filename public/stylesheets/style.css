@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#search {
+	text-align: center;
+	width: 500px;
+	height: 70px;
+	font-size: 1em;
+	border-radius: 8px;
+}
+
+.btn {
+	background-color: #ccc;
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.btn :active {
+	background-color: red;
+}

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  div
+    form(name='txtbox')
+      input(type='text', name='userParams', minlength='300')
+
+  button(class="btn", id="gettime"). gettime
+  button(class="btn", id="getroutes"). getroutes
+  button(class="btn", id="getvehicles"). getvehicles
+  button(class="btn", id="getdirections"). getdirections
+  button(class="btn", id="getstops"). getstops
+
+  h1 Results
+  p#results
+
+  script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+  script(src="/javascripts/xmlToJSON.js")
+  script(src="/javascripts/cta_api_main.js")
