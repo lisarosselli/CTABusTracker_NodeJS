@@ -20,8 +20,11 @@ router.get('/', function(req, res) {
 	// should be
 	// http://www.ctabustracker.com/bustime/api/v1/getvehicles?key=dcBun75XjwhPmnAkv8tQFa2xb&rt=36
 
+	//http://www.ctabustracker.com/bustime/api/v1/getvehicles?rt=20&key=dcBun75XjwhPmnAkv8tQFa2xb
+
 	console.log(urlParams);
 
+	/*
 	if (urlParams) {
 		p += '&';
 		for (var pName in urlParams) {
@@ -32,10 +35,18 @@ router.get('/', function(req, res) {
 	      //console.log(parameters.params[pName]);
 	    }
 	}
+	*/
 
-	console.log("p="+p);
+	var parameterString = "";
 
-	var url = base_url + apicall + and_key + p;
+	for (var i=0; i < urlParams.length; i++) {
+		console.log("for param in urlParams!");
+		console.log(urlParams[i]);
+		parameterString += "&";
+		parameterString += urlParams[i];
+	}
+
+	var url = base_url + apicall + and_key + parameterString;
 
 	console.log(url);
 
