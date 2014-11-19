@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var request = require('request');
+var mongodb = require('mongodb');
 
 var routes  = require('./routes/index');
 var users = require('./routes/users');
@@ -41,6 +42,17 @@ app.use('/cta_api', cta_api);
 app.use('/cta', cta);
 
 
+// testing some mongodb stuff
+//console.log(mongodb.Server);
+//console.log(mongodb.MongoClient);
+
+var mdbServer = new mongodb.Server('localhost', 3000, { poolSize: 5 });
+var client = new mongodb.MongoClient(mdbServer, {retryMiliSeconds : 5000});
+console.log(client);
+
+
+// /testing mongodb stuff
+
 
 //------- testing routing and requests
 app.get('/searching', function(req, res){
@@ -74,6 +86,7 @@ app.get('/searching', function(req, res){
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
+    req.params.mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(req.headers['user-agent'])) ? true : false;
     var err = new Error('Not Found');
     err.status = 404;
     next(err);

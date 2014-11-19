@@ -11,9 +11,9 @@ require.config({
     }
 });
 
-require(['attractions',
-	'async!https://maps.googleapis.com/maps/api/js?key=AIzaSyCAD-IeK_FoKEM_5mmYq0DZf_p3dytgobA&sensor=true',
+require(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyCAD-IeK_FoKEM_5mmYq0DZf_p3dytgobA&sensor=true',
 	'jquery', 
+  'attractions',
 	'bootstrap', 
 	'controller',
 	'model',
