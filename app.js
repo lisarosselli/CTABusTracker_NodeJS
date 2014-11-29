@@ -5,7 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var request = require('request');
-var mongodb = require('mongodb');
+//var mongodb = require('mongodb');
+//var Backbone = require('backbone');
 
 var routes  = require('./routes/index');
 var users = require('./routes/users');
@@ -14,6 +15,9 @@ var cta_api = require('./routes/cta_api');
 var cta = require('./routes/cta');
 
 var app = express();
+
+//console.log("is this backbone? ---> ");
+//console.log(Backbone);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,10 +50,11 @@ app.use('/cta', cta);
 //console.log(mongodb.Server);
 //console.log(mongodb.MongoClient);
 
+/* commenting out mongo here
 var mdbServer = new mongodb.Server('localhost', 3000, { poolSize: 5 });
 var client = new mongodb.MongoClient(mdbServer, {retryMiliSeconds : 5000});
 console.log(client);
-
+*/
 
 // /testing mongodb stuff
 

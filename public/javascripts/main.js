@@ -1,3 +1,25 @@
+console.log("main.js here");
+
+requirejs.config({
+  baseUrl: 'javascripts',
+  paths: {
+    jquery: 'jquery-2.1.0.min',
+    Backbone: 'backbone-min'
+  },
+  shim: {
+    'backbone-min': {
+      deps: ['jquery', 'underscore-min'],
+      exports: 'Backbone'
+    }
+  }
+});
+
+require(['jquery', 'underscore-min'], function() {
+  require(['bootstrap.min', 'Backbone','async']);
+
+});
+
+/*
 require.config({
     paths: {
         attractions: 'attractions',
@@ -7,14 +29,20 @@ require.config({
         user: 'user',
         jquery: 'jquery-2.1.0.min',
         bootstrap: 'bootstrap.min',
+        underscore: 'underscore-min',
+        backbone: 'backbone-min',
         async: 'async'
     }
 });
+*/
 
+/*
 require(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyCAD-IeK_FoKEM_5mmYq0DZf_p3dytgobA&sensor=true',
 	'jquery', 
+  'bootstrap',
+  'underscore',
   'attractions',
-	'bootstrap', 
+  'backbone',
 	'controller',
 	'model',
 	'user'], function(a, map, $, bootstrap, c, m, u, a) {
@@ -22,6 +50,7 @@ require(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyCAD-IeK_FoKEM_
 	
 	initialize();
 });
+*/
 
 
 // global variables/objects
